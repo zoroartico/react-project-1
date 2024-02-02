@@ -68,7 +68,7 @@ class TaxCalculator extends Component {
         return (
         <div>
             <h1 className='text-center display-5 mb-2'>Tax Calculator</h1>
-            <div className="container justify-content-center text-center">
+            <div className="container text-center">
                 <div className="row">
                     <label className='mb-2 lead'>Yearly income: </label>
                 </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
 
 class TaxCalculator extends Component {
     state = { 
@@ -68,24 +67,26 @@ class TaxCalculator extends Component {
     render() { 
         return (
         <div>
-            <h1 className='text-center display-3 mb-2'>Tax Calculator</h1>
-            <div className="container align-items-center text-center">
+            <h1 className='text-center display-5 mb-2'>Tax Calculator</h1>
+            <div className="container justify-content-center text-center">
                 <div className="row">
-                    <label className='mb-2 display-4'>Yearly income: </label><br/>
-                    <input type="text" id="income" name="income" onChange={this.handleChange} className='mb-2' ></input>
+                    <label className='mb-2 lead'>Yearly income: </label>
+                </div>
+                <div className="row justify-content-center">
+                    <input type="text" id="income" name="income" onChange={this.handleChange} className='text-center mb-2 w-50'></input>
                 </div>
 
-                <div className="row">
+                <div className="row justify-content-center">
                     <button 
                         id="processEntryBtn" 
-                        className='btn btn-outline-primary mb-2'
+                        className='btn btn-outline-primary mb-2 w-50'
                         type="button"
                         onClick={() => this.processEntry(this.state.income)}
                         >Process
                     </button>
                 </div>
                 <div className="row">
-                    <p id="owed" className="alert alert-danger">{ this.state.message }</p>
+                    <p id="owed" className="lead" >{ this.state.message }</p>
                 </div>
             </div>
         </div>);

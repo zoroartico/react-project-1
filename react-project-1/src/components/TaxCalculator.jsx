@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 
 class TaxCalculator extends Component {
     state = { 
-        message : "Please enter your yearly income in the field above."
+        message : null
     }
     handleChange = (event) => {
         this.setState({ income: event.target.value });
@@ -67,24 +68,24 @@ class TaxCalculator extends Component {
     render() { 
         return (
         <div>
-            <h1>Tax Calculator</h1>
-            <div className="bubble">
+            <h1 className='text-center display-3 mb-2'>Tax Calculator</h1>
+            <div className="container align-items-center text-center">
                 <div className="row">
-                    <label>Yearly income: </label><br/>
-                    <input type="text" id="income" name="income" onChange={this.handleChange}></input>
+                    <label className='mb-2 display-4'>Yearly income: </label><br/>
+                    <input type="text" id="income" name="income" onChange={this.handleChange} className='mb-2' ></input>
                 </div>
 
                 <div className="row">
                     <button 
                         id="processEntryBtn" 
-                        className="processEntryBtn"
+                        className='btn btn-outline-primary mb-2'
                         type="button"
                         onClick={() => this.processEntry(this.state.income)}
                         >Process
                     </button>
                 </div>
                 <div className="row">
-                    <p id="owed">{ this.state.message }</p>
+                    <p id="owed" className="alert alert-danger">{ this.state.message }</p>
                 </div>
             </div>
         </div>);
